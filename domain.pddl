@@ -1,4 +1,4 @@
-(define (domain conductorlog)
+(define (domain ambulancia-servicio)
 	(:requirements :strips)
 	(:predicates
 		(OBJ ?obj)
@@ -9,7 +9,6 @@
 		(in ?obj1 ?obj)
 		(conduciendo ?v)
 		(link ?x ?y)
-		(path ?x ?y)
 		(DESOCUPAR ?v)
 	)
 	(:action RUTA-AMBULANCIA
