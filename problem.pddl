@@ -1,8 +1,6 @@
 (define (problem DLOG-2-2-2)
 	(:domain conductorlog)
 	(:objects
-	conductor1
-	conductor2
 	ambulancia1
 	ambulancia2
 	paciente1
@@ -13,7 +11,7 @@
 	l4
 	)
 	(:init
-	(conductor conductor1)
+	
 	(at ambulancia1 l1)
 	(DESOCUPAR ambulancia1)
 	(AMBULANCIA ambulancia1)
@@ -31,7 +29,7 @@
 	(LOCALIZACION l3)
 	(LOCALIZACION l4)
 	
-	(at conductor1  l1)
+
 	(link l1 l2)
 	(link l2 l1)
 	
