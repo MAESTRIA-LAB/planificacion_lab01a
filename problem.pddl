@@ -6,15 +6,13 @@
 	(:INIT
 		(HOSPITAL hospital1)
 		(AMBULANCIA ambulancia1)
-		(DESOCUPAR ambulancia1)
-		
+		(DESOCUPAR ambulancia1)	
 		(at ambulancia1 l1)
 		(OBJ paciente1)
 		(OBJ paciente2)
 		(at paciente1 l4)
 		(at paciente2 l3)
-		(in hospital1 l1)
-		
+		(in hospital1 l1)	
 		(LOCALIZACION l1)
 		(LOCALIZACION l2)
 		(LOCALIZACION l3)

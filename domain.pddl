@@ -35,12 +35,6 @@
 		)
 	)
 
-	;	(:action RUTA-AMBULANCIA
-;		:parameters (?ambulancia ?loc)
-;		:precondition (and  (AMBULANCIA ?ambulancia) (LOCALIZACION ?loc)
-;			(at ?ambulancia ?loc)  (DESOCUPAR ?ambulancia))
-;		:effect (and  (conduciendo ?ambulancia) (not (DESOCUPAR ?ambulancia)))
-;	)
 	(:action CONDUCIR-AMBULANCIA
 		:parameters (?ambulancia ?loc_origen ?loc_destino )
 		:precondition (and (AMBULANCIA ?ambulancia) (LOCALIZACION ?loc_origen) (LOCALIZACION ?loc_destino) 
