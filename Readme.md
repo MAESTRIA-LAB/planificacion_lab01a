@@ -1,0 +1,1 @@
+java -jar pddl4j-3.8.3.jar -o ./domain.pddl -f ./problem.pddl
