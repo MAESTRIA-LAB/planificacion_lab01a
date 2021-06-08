@@ -8,15 +8,11 @@
 		(in ?obj1 ?obj)
 		(conduciendo ?v)
 		(link ?x ?y)
-		(DESOCUPAR ?v)
+		(HOSPITAL ?h)
+		(DESOCUPAR ?a)
 		(CARGAR ?v)
 	)
-;	(:action RUTA-AMBULANCIA
-;		:parameters (?ambulancia ?loc)
-;		:precondition (and  (AMBULANCIA ?ambulancia) (LOCALIZACION ?loc)
-;			(at ?ambulancia ?loc)  (DESOCUPAR ?ambulancia))
-;		:effect (and  (conduciendo ?ambulancia) (not (DESOCUPAR ?ambulancia)))
-;	)
+
 
 	(:action SUBIR-AMBULANCIA
 		:parameters (?obj ?ambulancia ?loc)
@@ -38,6 +34,13 @@
 		(not (CARGAR ?ambulancia))
 		)
 	)
+
+	;	(:action RUTA-AMBULANCIA
+;		:parameters (?ambulancia ?loc)
+;		:precondition (and  (AMBULANCIA ?ambulancia) (LOCALIZACION ?loc)
+;			(at ?ambulancia ?loc)  (DESOCUPAR ?ambulancia))
+;		:effect (and  (conduciendo ?ambulancia) (not (DESOCUPAR ?ambulancia)))
+;	)
 	(:action CONDUCIR-AMBULANCIA
 		:parameters (?ambulancia ?loc_origen ?loc_destino )
 		:precondition (and (AMBULANCIA ?ambulancia) (LOCALIZACION ?loc_origen) (LOCALIZACION ?loc_destino) 
