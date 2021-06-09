@@ -1,5 +1,5 @@
 (define (domain ambulancia-servicio-hospital)
-	(:requirements :strips)
+	(:requirements :strips :negative-preconditions)
 	(:predicates
 		(PACIENTE ?paciente)
 		(AMBULANCIA ?ambulancia)
@@ -21,12 +21,13 @@
 			(HOSPITAL ?hospital)
 			(ubicado ?ambulancia ?loc)
 			(ubicado ?paciente ?loc)
+			(not (ocupado ?ambulancia))
 		)
 		:effect (and 
 			(not (ubicado ?paciente ?loc)) 
 			(en ?paciente ?ambulancia)
 			(en ?ambulancia ?hospital)
-			(ocupado ?paciente)
+			(ocupado ?ambulancia)
 		)
 	)
 
@@ -39,13 +40,13 @@
 			(HOSPITAL ?hospital)
 			(ubicado ?ambulancia ?loc)
 			(en ?paciente ?ambulancia)
+			(ocupado ?ambulancia)
 		)
 		:effect (and
 			(not (en ?paciente ?ambulancia))
 			(en ?ambulancia ?hospital)
 			(ubicado ?paciente ?loc)
-			(ubicado ?ambulancia ?loc)
-			(not (ocupado ?paciente))
+			(not (ocupado ?ambulancia))
 		)
 	)
 

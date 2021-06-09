@@ -1,5 +1,5 @@
 (define (domain ambulancia-sin-hospital01)
-	(:requirements :strips)
+	(:requirements :strips :negative-preconditions)
 	(:predicates
 		(PACIENTE ?paciente)
 		(AMBULANCIA ?ambulancia)
@@ -19,11 +19,12 @@
 			(LOCALIZACION ?loc)
 			(ubicado ?ambulancia ?loc)
 			(ubicado ?paciente ?loc)
+			(not (ocupado ?ambulancia))
 		)
 		:effect (and 
 			(not (ubicado ?paciente ?loc)) 
 			(en ?paciente ?ambulancia)
-			(ocupado ?paciente)
+			(ocupado ?ambulancia)
 		)
 	)
 
@@ -35,12 +36,13 @@
 			(LOCALIZACION ?loc)
 			(ubicado ?ambulancia ?loc)
 			(en ?paciente ?ambulancia)
+			 (ocupado ?ambulancia)
 		)
 		:effect (and
 			(not (en ?paciente ?ambulancia))
 			(ubicado ?paciente ?loc)
-			(en ?paciente ?loc)
-			(not (ocupado ?paciente))
+			;(en ?paciente ?loc)
+			(not (ocupado ?ambulancia))
 		)
 	)
 
