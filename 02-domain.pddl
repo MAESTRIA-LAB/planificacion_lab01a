@@ -8,6 +8,7 @@
 		(en ?obj1 ?obj2)
 		(conduciendo ?v)
 		(conectado ?x ?y)
+		(ocupado ?p)
 		(HOSPITAL ?h)
 	)
 
@@ -20,11 +21,12 @@
 			(HOSPITAL ?hospital)
 			(ubicado ?ambulancia ?loc)
 			(ubicado ?paciente ?loc)
+			(ocupado ?paciente)
 		)
 		:effect (and 
 			(not (ubicado ?paciente ?loc)) 
 			(en ?paciente ?ambulancia)
-			(not (en ?ambulancia ?hospital))
+			(en ?ambulancia ?hospital)
 		)
 	)
 
@@ -43,6 +45,7 @@
 			(en ?ambulancia ?hospital)
 			(ubicado ?paciente ?loc)
 			(ubicado ?ambulancia ?loc)
+			(not (ocupado ?paciente))
 		)
 	)
 

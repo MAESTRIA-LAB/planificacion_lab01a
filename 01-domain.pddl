@@ -8,6 +8,7 @@
 		(en ?obj1 ?obj2)
 		(conduciendo ?v)
 		(conectado ?x ?y)
+		(ocupado ?p)
 	)
 
 	(:action SUBIR-AMBULANCIA
@@ -22,6 +23,7 @@
 		:effect (and 
 			(not (ubicado ?paciente ?loc)) 
 			(en ?paciente ?ambulancia)
+			(ocupado ?paciente)
 		)
 	)
 
@@ -38,6 +40,7 @@
 			(not (en ?paciente ?ambulancia))
 			(ubicado ?paciente ?loc)
 			(en ?paciente ?loc)
+			(not (ocupado ?paciente))
 		)
 	)
 
