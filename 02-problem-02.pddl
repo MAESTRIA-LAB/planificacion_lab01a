@@ -8,8 +8,6 @@
 		(AMBULANCIA ambulancia1)
 		(PACIENTE paciente1)
 		(PACIENTE paciente2)
-		(not(en paciente1 hospital1))
-		(not(en paciente2 hospital1))
 		(en ambulancia1 hospital1)
 		(ubicado paciente1 l4)
 		(ubicado paciente2 l3)
