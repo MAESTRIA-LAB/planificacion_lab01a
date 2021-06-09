@@ -1,4 +1,4 @@
-(define (domain ambulancia-sin-hospital)
+(define (domain ambulancia-servicio-hospital)
 	(:requirements :strips)
 	(:predicates
 		(PACIENTE ?paciente)
@@ -8,6 +8,7 @@
 		(en ?obj1 ?obj2)
 		(conduciendo ?v)
 		(conectado ?x ?y)
+		(HOSPITAL ?h)
 	)
 
 	(:action SUBIR-AMBULANCIA
@@ -16,6 +17,7 @@
 			(PACIENTE ?paciente)
 			(AMBULANCIA ?ambulancia)
 			(LOCALIZACION ?loc)
+			(HOSPITAL ?hospital)
 			(ubicado ?ambulancia ?loc)
 			(ubicado ?paciente ?loc)
 		)
@@ -32,21 +34,36 @@
 			(PACIENTE ?paciente)
 			(AMBULANCIA ?ambulancia)
 			(LOCALIZACION ?loc)
+			(HOSPITAL ?hospital)
 			(ubicado ?ambulancia ?loc)
 			(en ?paciente ?ambulancia)
 		)
 		:effect (and
 			(not (en ?paciente ?ambulancia))
 			(en ?ambulancia ?hospital)
-			(en ?paciente ?hospital)
 			(ubicado ?paciente ?loc)
-			
+			(ubicado ?ambulancia ?loc)
+		)
+	)
+
+	(:action INTERNAR-PACIENTE
+		:parameters (?paciente ?hospital ?loc)
+		:precondition (and
+			(PACIENTE ?paciente)
+			(LOCALIZACION ?loc)
+			(HOSPITAL ?hospital)
+			(ubicado ?paciente ?loc)
+			(ubicado ?hospital ?loc)
+		)
+		:effect (and
+			(en ?paciente ?hospital)
 		)
 	)
 
 	(:action CONDUCIR-AMBULANCIA
 		:parameters (?hospital ?ambulancia ?loc_origen ?loc_destino)
 		:precondition (and
+			(HOSPITAL ?hospital)
 			(AMBULANCIA ?ambulancia)
 			(LOCALIZACION ?loc_origen)
 			(LOCALIZACION ?loc_destino)

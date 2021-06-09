@@ -1,9 +1,10 @@
-(define (problem AMBULANCIA-SN-HOSPITAL)
-	(:domain ambulancia-sin-hospital)
+(define (problem AMBULANCIA-HOSPITAL)
+	(:domain ambulancia-servicio-hospital)
 	(:objects
 		hospital1 ambulancia1 paciente1 paciente2 l1 l2 l3 l4 
 	)
 	(:INIT
+		(HOSPITAL hospital1)
 		(AMBULANCIA ambulancia1)
 		(ubicado ambulancia1 l1)
 		(PACIENTE paciente1)
@@ -12,6 +13,7 @@
 		(not(en paciente2 hospital1))
 		(ubicado paciente1 l4)
 		(ubicado paciente2 l3)
+		(ubicado hospital1 l1)
 		(en ambulancia1 hospital1)	
 		(LOCALIZACION l1)
 		(LOCALIZACION l2)
@@ -26,8 +28,8 @@
 	)
 	(:goal
 		(and
-			(ubicado paciente1 l1)
-			(ubicado paciente2 l1)
+			(en paciente1 hospital1)
+			(en paciente2 hospital1)
 		)
 	)
 )
