@@ -21,12 +21,12 @@
 			(HOSPITAL ?hospital)
 			(ubicado ?ambulancia ?loc)
 			(ubicado ?paciente ?loc)
-			(ocupado ?paciente)
 		)
 		:effect (and 
 			(not (ubicado ?paciente ?loc)) 
 			(en ?paciente ?ambulancia)
 			(en ?ambulancia ?hospital)
+			(ocupado ?paciente)
 		)
 	)
 
