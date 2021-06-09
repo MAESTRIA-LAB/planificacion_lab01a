@@ -8,6 +8,7 @@
 		(AMBULANCIA ambulancia1)
 		(PACIENTE paciente1)
 		(PACIENTE paciente2)
+
 		(en ambulancia1 hospital1)
 		(ubicado paciente1 l6)
 		(ubicado paciente2 l4)
@@ -39,8 +40,8 @@
 	)
 	(:goal
 		(and
-			(ubicado paciente1 l5)
-			(ubicado paciente2 l5)
+			(en paciente1 hospital1)
+			(en paciente2 hospital1)
 		)
 	)
 )
