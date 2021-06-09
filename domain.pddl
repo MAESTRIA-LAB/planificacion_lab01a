@@ -13,7 +13,6 @@
 		(CARGAR ?v)
 	)
 
-
 	(:action SUBIR-AMBULANCIA
 		:parameters (?obj ?ambulancia ?loc)
 		:precondition (and (OBJ ?obj) (AMBULANCIA ?ambulancia) (LOCALIZACION ?loc)
@@ -36,8 +35,9 @@
 	)
 
 	(:action CONDUCIR-AMBULANCIA
-		:parameters (?ambulancia ?loc_origen ?loc_destino )
+		:parameters (?ambulancia ?loc_origen ?loc_destino ?hospital)
 		:precondition (and (AMBULANCIA ?ambulancia) (LOCALIZACION ?loc_origen) (LOCALIZACION ?loc_destino) 
+		(HOSPITAL ?hospital)
 			(at ?ambulancia ?loc_origen)
 			 (link ?loc_origen ?loc_destino))
 		:effect (and (not (at ?ambulancia ?loc_origen)) (at ?ambulancia ?loc_destino)

@@ -16,6 +16,8 @@ lpg-td-1.0.exe -o C:\Users\ingpa\AppData\Local\Temp\domain-25208pAkOdN0Ol75E.pdd
 
 
 
+D:/IA/LPG-td-1.0/lpg-td-1.0.exe -o domain.pddl -f problem.pddl -n 1
+
 gitinit2$
 git clone https://github.com/pellierd/pddl4j.git
 
