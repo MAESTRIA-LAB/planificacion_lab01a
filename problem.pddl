@@ -1,12 +1,11 @@
 (define (problem AMBULANCIA-2-2-2)
 	(:domain ambulancia-servicio)
 	(:objects
-		ambulancia1 paciente1 paciente2 l1 l2 l3 l4 hospital1
+		hospital1 ambulancia1 paciente1 paciente2 l1 l2 l3 l4 
 	)
 	(:INIT
 		(HOSPITAL hospital1)
 		(AMBULANCIA ambulancia1)
-		(DESOCUPAR ambulancia1)	
 		(at ambulancia1 l1)
 		(OBJ paciente1)
 		(OBJ paciente2)

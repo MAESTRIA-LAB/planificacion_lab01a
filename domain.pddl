@@ -9,7 +9,6 @@
 		(conduciendo ?v)
 		(link ?x ?y)
 		(HOSPITAL ?h)
-		(DESOCUPAR ?a)
 		(CARGAR ?v)
 	)
 
@@ -37,6 +36,7 @@
 	(:action CONDUCIR-AMBULANCIA
 		:parameters (?ambulancia ?loc_origen ?loc_destino ?hospital)
 		:precondition (and(AMBULANCIA ?ambulancia) (LOCALIZACION ?loc_origen) (LOCALIZACION ?loc_destino) 
+			(HOSPITAL ?hospital)
 			(at ?ambulancia ?loc_origen)
 			 (link ?loc_origen ?loc_destino))
 		:effect (and (not (at ?ambulancia ?loc_origen)) (at ?ambulancia ?loc_destino)
