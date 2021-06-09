@@ -36,8 +36,7 @@
 
 	(:action CONDUCIR-AMBULANCIA
 		:parameters (?ambulancia ?loc_origen ?loc_destino ?hospital)
-		:precondition (and (AMBULANCIA ?ambulancia) (LOCALIZACION ?loc_origen) (LOCALIZACION ?loc_destino) 
-		(HOSPITAL ?hospital)
+		:precondition (and (HOSPITAL ?hospital)(AMBULANCIA ?ambulancia) (LOCALIZACION ?loc_origen) (LOCALIZACION ?loc_destino) 
 			(at ?ambulancia ?loc_origen)
 			 (link ?loc_origen ?loc_destino))
 		:effect (and (not (at ?ambulancia ?loc_origen)) (at ?ambulancia ?loc_destino)
