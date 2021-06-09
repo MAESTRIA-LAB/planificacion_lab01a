@@ -1,4 +1,7 @@
-java -jar ./planificadores/pddl4j-3.8.3.jar -o ./domain.pddl -f  ./problem.pddl
+# PLANIFICACIÓN LABOROTARIO-02
+
+
+java -jar ./planificadores/windows/pddl4j-3.8.3.jar -o ./domain.pddl -f  ./problem.pddl
 
 java-jarpddl4j-3.8.3.jar−server−Xms2048m−Xmx2048mfr.uga.pddl4j.planners.hsp.HSP-o./domain.pddl-f./problem.pddl
 
