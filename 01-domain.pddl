@@ -41,7 +41,6 @@
 		:effect (and
 			(not (en ?paciente ?ambulancia))
 			(ubicado ?paciente ?loc)
-			;(en ?paciente ?loc)
 			(not (ocupado ?ambulancia))
 		)
 	)
