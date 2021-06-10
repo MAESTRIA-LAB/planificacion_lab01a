@@ -20,6 +20,15 @@
 		(conectado l4 l2)
 		(conectado l3 l4)
 		(conectado l4 l3)
+
+
+		(conectado l4 l2)
+		(conectado l2 l4)
+		(conectado l2 l4)
+		(conectado l2 l1)
+		(conectado l1 l2)
+		(conectado l1 l3)
+		(conectado l3 l1)
 	)
 	(:goal
 		(and
