@@ -1,16 +1,16 @@
 (define (problem VARIANTE_O3DOM)
 	(:domain ambulancia-sin-hospital01)
 	(:objects
-		hospital1 ambulancia1 paciente1 paciente2 l1 l2 l3 l4 l5 l6 l7
+		ambulancia1 paciente1 paciente2 l1 l2 l3 l4 l5 l6 l7
 	)
 	(:INIT
 		(AMBULANCIA ambulancia1)
-		(ubicado ambulancia1 l5)
+		
 		(PACIENTE paciente1)
 		(PACIENTE paciente2)
 		(ubicado paciente1 l6)
 		(ubicado paciente2 l4)
-		(en ambulancia1 hospital1)	
+		(ubicado ambulancia1 l5)	
 		(LOCALIZACION l1)
 		(LOCALIZACION l2)
 		(LOCALIZACION l3)
@@ -18,6 +18,7 @@
 		(LOCALIZACION l5)
 		(LOCALIZACION l6)
 		(LOCALIZACION l7)
+
 		(conectado l5 l2)
 		(conectado l2 l5)
 		(conectado l2 l1)
